@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>posExhibition</title>
+</head>
+<body class="container">
+    <div style = "text-align :center;" onclick="window.location.reload();">
+        <img id="logo" src="./img/logo.png">
+        <hr>
+    </div>
+    <article class="start">
+        <div class="posTitle">
+            <p>제 2회 별조각 사진전시회</p>
+            <p id="posExplain">별조각 사진전시회에 오신 것을 환영합니다.<br> 해당 사진을 클릭하면 <a style="color: rgb(255, 0, 0);">사진 제목 및 설명</a>을 보실수 있습니다.</p>
+        </div>
+        <div class="section" onclick="toDetail(1);">
+            <img id="frame" src="./img/1.png">
+            <p id="fRank">1등 이현승</p>
+        </div>
+        <div class="section" onclick="toDetail(2);">
+            <img id="frame" src="./img/2.png">
+            <p id="fRank">2등 김지원</p>
+        </div>
+        <div class="section" onclick="toDetail(3);">
+            <img id="frame" src="./img/3.png">
+            <p id="fRank">3등 안신현</p>
+        </div>
+    </article>
+    <article class="detail">
+        <div class="dCenter">
+            <img id="dFrame" src="./img/gold.png">
+            <p id="rank">순위</p>
+        </div>
+        <p id="title">사진 제목</p>
+        <p id="explain">사진 설명</p>
+        <button id="difBtn" type="button" class="btn btn-secondary pt-3 pb-3"  onclick="window.location.reload();">다른 작품도 보러가기</button>
+    </article>
+    <footer>
+        <hr>
+        <br>
+        <p>Develop by 별조각 임원진</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script>
+        var p={
+            1:{"rank":"★ 1등 19학번 이현승 ★", "img":"./img/1.png", "title":"개기 월식 잔상", "explain":"개기 월식이 진행됨에 따라 변화되는 달의 모습을 담았습니다. 시간이 지남에 따라 달의 위치가 변화되고, 월식이 진행됨에 따라 달이 가려집니다. 타임랩스를 이용하여 달의 잔상이 남는 것처럼 표현하였습니다."},
+            2:{"rank":"★ 2등 20학번 김지원 ★", "img":"./img/2.png", "title":"부끄러운 달", "explain":"개기 월식과 천왕성 엄폐가 함께 진행되는 매우 소중한 날이었습니다. 오늘 본 달은 개개월식이 진행됨에 따라 태양빛에 의해 붉은 빛을 띄었는데요. 저는 이 모습이 마치 부끄러워서 얼굴을 붉히는 것 같다고 생각하여 부끄러운 달이라고 짓게 되었습니다. 정말 재밌고 소중한 추억이었습니다. 별조각 짱! ^^"},
+            3:{"rank":"★ 3등 20학번 안신현 ★", "img":"./img/3.png", "title":"가을 단풍", "explain":"개기일식으로 동그랗지 않게 된 모습이 나뭇잎 모양과 비슷하다고 느꼈습니다. 그리고 빨간색인 달의 모습이 붉게 물든 가을 단풍잎을 생각나게 했습니다. 이러한 달을 단풍이 물들고 떨어지는 지금의 계절과 연결지어 가을 단풍이라는 제목을 짓게 되었습니다."}
+        }
+        function toHome(){
+            $(".start").show();
+            $(".detail").hide();
+        }
+        function toDetail(i){
+            $(".start").hide();
+            $(".detail").show();
+            next(i);
+        }
+        function next(i){
+            $("#rank").html(p[i]["rank"]);
+            $("#dFrame").attr("src",p[i]["img"]);
+            $("#title").html(p[i]["title"]);
+            $("#explain").html(p[i]["explain"]);
+        }
+    </script>
+</body>
+</html>
