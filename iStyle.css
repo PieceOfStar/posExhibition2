@@ -4,7 +4,7 @@
 .welcome{
     height: 100vh;
     width: 100%;
-    background-image: url('mainImage.jpg');
+    background-image: url('main.jpg');
     background-repeat : no-repeat;
     background-color: black;
     background-position: center;
@@ -26,7 +26,7 @@
 
 #go{
     margin-top: 80px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     width: 100%;
 }
